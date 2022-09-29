@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Painting</title>
+        <link rel='stylesheet' href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>My Canvas</h1>
+
+        <div class="color-picker">
+          <div id="selected"></div> 
+          
+          <div class="color" style="background-color: red;" onclick="window.selectedColor='red'; chosenColor('red');"></div>
+          <div class="color" style="background-color: orange;" onclick="window.selectedColor='orange'; chosenColor('orange');"></div>
+          <div class="color" style="background-color: yellow;" onclick="window.selectedColor='yellow'; chosenColor('yellow');"></div>
+          <div class="color" style="background-color: green;" onclick="window.selectedColor='green'; chosenColor('green');"></div>
+          <div class="color" style="background-color: blue;" onclick="window.selectedColor='blue'; chosenColor('blue');"></div>
+          <div class="color" style="background-color: purple;" onclick="window.selectedColor='purple'; chosenColor('purple');"></div>
+          <div class="color" style="background-color: white;" onclick="window.selectedColor = 'white'; chosenColor('white');"></div>
+          <div class="color" id="rgb(25, 154, 129)" style="background-color: rgb(25, 154, 129);" onclick="window.selectedColor = 'rgb(25, 154, 129)'; chosenColor('rgb(25, 154, 129)');"></div>
+        </div>
+        <div id="canvas">
+
+        </div>
+        <script>
+      var canvas = document.getElementById('canvas');
+        for (var i = 0; i < 500; i = i + 1) {
+          canvas.innerHTML += "<div class='box' onclick='fillCanvas(this)'></div>";
+
+         }
+          var selectedColor;
+          function fillCanvas (box) {
+            box.style.backgroundColor = selectedColor;
+          }
+          function chosenColor (color){
+            var chosen = document.getElementById("selected")
+            chosen.style.backgroundColor = color;
+          }
+      </script>
+
+    </body>
+</html>
